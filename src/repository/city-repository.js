@@ -31,7 +31,7 @@ const { Op } = require("sequelize");
 async updateCity(cityId, data) { // {name: "Prayagraj"}
         try {
             // The below approach also works but will not return updated object
-            // if we are using Pg then returning: true can be used, else not
+            // if we are using Postgrace then returning: true can be used, else not
             // const city = await City.update(data, {
             //     where: {
             //         id: cityId
@@ -49,7 +49,6 @@ async updateCity(cityId, data) { // {name: "Prayagraj"}
             throw {error};
         }
     }
-
     async getCity(cityId) {
         try {
             const city = await City.findByPk(cityId);
