@@ -20,34 +20,10 @@ const setupAndStartServer = async () => {
      
   app.listen(PORT, async () => {
     console.log(`Server started at ${PORT}`);
-    if (process.env.SYNC_DB) {
-      db.sequelize.sync({ alter: true });
-    }
+    // if (process.env.SYNC_DB) {
+    //   db.sequelize.sync({ alter: true });
+    // }
   });   
 };
  
 setupAndStartServer();   
-
-// db.City.bulkCreate([{ name: 'mp1' }, { name: 'u1p' }]);//array of object
-// const city = db.City.findByPk(1, {
-//    include: Airport
-// });
-
-// console.log(city);
-
-
-// async function test(){
-
-//    const city = await City.findOne({
-//       where: {
-//          name: "cawnpore"
-//       },
-
-//       include: Airport
-//    });
-
-// console.log(JSON.stringify(city.toJSON(), null, 2));
-// }
-// test();
-
- Airplane.create({modelNumber:'Bombardier CRJ'});
